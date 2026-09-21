@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.ServiceProcess;
 
@@ -25,7 +25,8 @@ namespace File_Monitoring_Windows_Service
                 DisplayName = "FileMonitoringService",
                 Description = @"A Windows Service that Watch and Move Files From specific
                                 Folder to another Folder With Rename File to GUID Name",
-                StartType = ServiceStartMode.Automatic
+                StartType = ServiceStartMode.Automatic,
+                ServicesDependedOn = new string[] { "RpcSs", "EventLog", "LanmanWorkstation" }
             };
 
             Installers.Add(processInstaller);
