@@ -92,11 +92,11 @@ namespace DatabaseBackup_Service
                     }
                 }
 
-                LogServiceEvent("Backup Done Successfully");
+                LogServiceEvent($"DataBase: [{FileName}] Backup Done Successfully");
             }
             catch (Exception ex)
             {
-                LogServiceEvent($"Error: {ex.Message} Backup Faild");
+                LogServiceEvent($"Error: {ex.Message} Backup For DataBase: [{FileName}] Faild");
             }
         }
 
